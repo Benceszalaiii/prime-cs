@@ -1,9 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+// Time complexity: O(Nlog(Log(N)))
+// Space complexity: O(N)
 
 namespace ConsoleApp1
 {
@@ -26,12 +25,15 @@ namespace ConsoleApp1
                 Console.WriteLine("Nincs a megadott sorozatban primszam");
             }
             var watch = System.Diagnostics.Stopwatch.StartNew();
+            // Algoritmus kezdete
             bool[] vec = Enumerable.Repeat(true, ig).ToArray();
             vec[0] = false; vec[1] = false;
-            int lastIndex = (int)Math.Floor(Math.Sqrt(vec.Length));
+            double lastIndex = Math.Sqrt(vec.Length);
             //Console.WriteLine("[{0}]", string.Join(", ", vec));
             //Console.WriteLine("Last index: " + lastIndex);  // Sqrt(vec.Length) a legnagyobb szam ami lehet primszam, azutan mar mindent megneztunk
+            
 
+            // Nem primek kiszitalasa Ero
             for (int i = 2; i <= lastIndex; i++)
             {
                 if (vec[i])
@@ -42,19 +44,33 @@ namespace ConsoleApp1
                     }
                 }
             }
-            int a = 0;
             //Console.WriteLine("[{0}]", string.Join(", ", vec));  // Bool meg mindig, de mar csak a primszamok indexei igazak
-            int[] primes = vec
-                .Select((value, index) => new { Value = value, Index = index })
-                .Where(item => item.Value)
-                .Select(item => item.Index)
-                .ToArray();
+
+
+            // Megszamlalas, ha kell (addig kikommentezve, if statement lelassitja valamennyivel a programot)
+            //int[] primes = vec
+            //    .Select((value, index) => new { Value = value, Index = index })
+            //    .Where(item => item.Value)
+            //    .Select(item => item.Index)
+            //    .ToArray();
+
+            // Algoritmus vege
+
+            //  Primek listaja: primes
+            //  Primek szama: primes.Length
+            int count = vec.Where(c=>c).Count() ; 
             watch.Stop();
             //Console.WriteLine("[{0}]", string.Join(", ", primes)); // Kiirja az osszes szamot
-            Console.WriteLine("A megadott sorozatban " + primes.Length + "primszam van.");
+
+            // Ha ki akarjuk iratni a primek listajat es szamat, ez a sor teszi meg
+            // Console.WriteLine("A megadott sorozatban " + primes.Length + "primszam van.");
+
+
+            // Ha nem irjuk ki az osszeset, akkor ez is eleg
+            Console.WriteLine("Prímek száma a sorozatban: " + count);
+
             Console.WriteLine("Program lefutasi ideje: " + watch.ElapsedMilliseconds + "ms");
         Console.ReadKey();
         }
     }
-
 }
