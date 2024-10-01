@@ -90,3 +90,5 @@ Note that to run the source code yourself, you need to have Visual Studio 2022 C
 To build it, run `cargo init` in an empty folder, then copy the source code into the created main.rs file.
 
 Run `cargo build -r` to create an optimized release build.
+
+### Note that I did not digitally sign the pre-compiled rust file and Windows likes to complain about it.
