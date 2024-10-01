@@ -77,3 +77,16 @@ All we need to do now is either count them or enumerate our list, where we will 
 |10000000|206ms|75ms|275%|
 |100000000|2483ms|1047ms|237%|
 |1000000000|30774ms|18074ms|170%|
+
+
+## Other information
+
+You can find the source code above, for a primitive C# algorithm and the Rust code used for benchmarking. 
+
+The Rust source code is provided in `main.rs`, but the pre compiled version is also available by downloading `rust-prime.exe`.
+
+Note that to run the source code yourself, you need to have Visual Studio 2022 C++ build tools and rust, cargo installed. 
+
+To build it, run `cargo init` in an empty folder, then copy the source code into the created main.rs file.
+
+Run `cargo build -r` to create an optimized release build.
