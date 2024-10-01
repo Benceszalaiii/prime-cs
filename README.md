@@ -68,3 +68,12 @@ We go till `sqrt(120)` in this case, and skip every value that we already ruled 
 After we sorted out everything until 11 (square root of 120), we are left with all the prime numbers (purple)
 
 All we need to do now is either count them or enumerate our list, where we will keep all the indexes that has the value `true` remaining
+
+## Compared to Rust
+
+|N|C#|Rust|Difference|
+|-|--|----|----------|
+|1000000|15ms|2ms|750%|
+|10000000|206ms|75ms|275%|
+|100000000|2483ms|1047ms|237%|
+|1000000000|30774ms|18074ms|170%|
