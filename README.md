@@ -4,7 +4,7 @@ A prime generating/counting program that uses Sieve of Eratosthenes
 
 ## Big O Notations
 
-### - Time Complexity: O(N*log(Log(N))+N)
+### - Time Complexity: O(N*log(Log(N)))
 
 <img src="big-o.png" alt="drawing" width="200"/>
 
