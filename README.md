@@ -71,13 +71,15 @@ All we need to do now is either count them or enumerate our list, where we will 
 
 ## Compared to Rust
 
-|N|C#|Rust|Difference|
-|-|--|----|----------|
-|1000000|15ms|2ms|750%|
-|10000000|206ms|75ms|275%|
-|100000000|2483ms|1047ms|237%|
-|1000000000|30774ms|14962ms|205%|
+|N|C#|Rust|Difference|C# Primitive Method|
+|-|--|----|----------|-------------------|
+|1000000|15ms|2ms|750%|6492ms|
+|10000000|206ms|75ms|275%|-|
+|100000000|2483ms|1047ms|237%|-|
+|1000000000|30774ms|14962ms|205%|-|
 
+
+`-`: Takes too long to process
 
 ## Other information
 
