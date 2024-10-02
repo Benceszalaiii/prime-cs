@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
-// Time complexity: O(Nlog(Log(N))+N)
+// Time complexity: O(Nlog(Log(N)))
 // Space complexity: O(N)
 
 namespace ConsoleApp1
